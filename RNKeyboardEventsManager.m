@@ -7,9 +7,9 @@
 //
 
 #import "RNKeyboardEventsManager.h"
-#import "RCTConvert.h"
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTConvert.h>
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 
 static NSString* RNKeyboardEventsDidShow = @"keyboardDidShow";
 static NSString* RNKeyboardEventsDidHide = @"keyboardDidHide";
@@ -73,7 +73,7 @@ RCT_EXPORT_MODULE();
   CGRect keyboardEndRect = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
   NSNumber *durationValue = [[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey];
 
-    
+
   // Normalization: if durationValue is null, set it to 0
   if (durationValue == nil) {
     durationValue = [NSNumber numberWithDouble:0];
